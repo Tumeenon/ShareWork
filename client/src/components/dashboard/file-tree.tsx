@@ -16,7 +16,7 @@ interface FileTreeNode {
 
 const initialFileTree: FileTreeNode[] = [
   {
-    name: 'my-fullstack-app/',
+    name: 'sharework/',
     type: 'folder',
     icon: 'folder',
     isOpen: true,
@@ -31,18 +31,38 @@ const initialFileTree: FileTreeNode[] = [
             name: 'src/',
             type: 'folder',
             icon: 'folder',
+            isOpen: true,
             children: [
-              { name: 'controllers/', type: 'folder', icon: 'folder' },
-              { name: 'middleware/', type: 'folder', icon: 'folder' },
-              { name: 'models/', type: 'folder', icon: 'folder' },
+              {
+                name: 'modules/',
+                type: 'folder',
+                icon: 'folder',
+                children: [
+                  { name: 'auth/', type: 'folder', icon: 'folder' },
+                  { name: 'users/', type: 'folder', icon: 'folder' },
+                  { name: 'projects/', type: 'folder', icon: 'folder' },
+                  { name: 'tasks/', type: 'folder', icon: 'folder' },
+                  { name: 'payments/', type: 'folder', icon: 'folder' },
+                  { name: 'messaging/', type: 'folder', icon: 'folder' },
+                ]
+              },
               { name: 'routes/', type: 'folder', icon: 'folder' },
+              { name: 'middleware/', type: 'folder', icon: 'folder' },
               { name: 'services/', type: 'folder', icon: 'folder' },
-              { name: 'app.ts', type: 'file', icon: 'file-code' },
-              { name: 'server.ts', type: 'file', icon: 'file-code' },
+              { name: 'models/', type: 'folder', icon: 'folder' },
+              { name: 'utils/', type: 'folder', icon: 'folder' },
             ]
           },
-          { name: 'package.json', type: 'file', icon: 'file' },
-          { name: 'tsconfig.json', type: 'file', icon: 'file' },
+          {
+            name: 'prisma/',
+            type: 'folder',
+            icon: 'folder',
+            children: [
+              { name: 'schema.prisma', type: 'file', icon: 'file-code' },
+              { name: 'seed.ts', type: 'file', icon: 'file-code' },
+            ]
+          },
+          { name: 'server.ts', type: 'file', icon: 'file-code' },
         ]
       },
       {
@@ -60,11 +80,11 @@ const initialFileTree: FileTreeNode[] = [
               { name: 'pages/', type: 'folder', icon: 'folder' },
               { name: 'hooks/', type: 'folder', icon: 'folder' },
               { name: 'context/', type: 'folder', icon: 'folder' },
-              { name: 'App.tsx', type: 'file', icon: 'file-code' },
+              { name: 'utils/', type: 'folder', icon: 'folder' },
+              { name: 'admin/', type: 'folder', icon: 'folder' },
               { name: 'main.tsx', type: 'file', icon: 'file-code' },
             ]
           },
-          { name: 'vite.config.ts', type: 'file', icon: 'file' },
         ]
       },
       {
@@ -77,9 +97,19 @@ const initialFileTree: FileTreeNode[] = [
           { name: 'helpers/', type: 'folder', icon: 'folder' },
         ]
       },
-      { name: 'scripts/', type: 'folder', icon: 'folder' },
+      {
+        name: 'scripts/',
+        type: 'folder',
+        icon: 'folder',
+        children: [
+          { name: 'migrations/', type: 'folder', icon: 'folder' },
+          { name: 'seeds/', type: 'folder', icon: 'folder' },
+          { name: 'deploy/', type: 'folder', icon: 'folder' },
+          { name: 'tests/', type: 'folder', icon: 'folder' },
+        ]
+      },
+      { name: '.env.example', type: 'file', icon: 'file' },
       { name: '.gitignore', type: 'file', icon: 'file' },
-      { name: 'README.md', type: 'file', icon: 'file' },
       { name: 'package.json', type: 'file', icon: 'file' },
     ]
   }

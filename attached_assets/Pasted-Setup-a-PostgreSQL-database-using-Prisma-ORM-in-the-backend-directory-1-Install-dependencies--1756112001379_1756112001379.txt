@@ -1,0 +1,36 @@
+Setup a PostgreSQL database using Prisma ORM in the /backend directory.
+
+1. Install dependencies:
+   - prisma, @prisma/client, and pg for database connection
+   - dotenv for environment variables
+
+2. Configure the following:
+   - Create a .env file with DATABASE_URL for PostgreSQL
+   - Initialize Prisma with `npx prisma init`
+   - Place schema.prisma in /backend/prisma/schema.prisma
+
+3. Define Prisma schema with these models and relations:
+   - User: id (UUID), email, password_hash, role (enum: ADMIN, CLIENT, FREELANCER), status (enum: ACTIVE, SUSPENDED, DELETED), timestamps
+   - Profile: user_id (FK → User), display_name, trust_score, level, badges (JSON), timestamps
+   - Job: owner_user_id (FK → User), type (enum: FIXED, HOURLY), title, description, location, budget_min, budget_max, status (enum: OPEN, IN_PROGRESS, COMPLETED, CANCELED), timestamps
+   - Proposal: job_id (FK → Job), bidder_user_id (FK → User), amount, counter_amount, status (enum: PENDING, ACCEPTED, REJECTED, WITHDRAWN), timestamps
+   - Contract: proposal_id (FK → Proposal), status (enum: ACTIVE, COMPLETED, CANCELED), start_date, end_date, timestamps
+   - Milestone: contract_id (FK → Contract), title, amount, due_date, status (enum: PENDING, PAID, RELEASED), timestamps
+   - Escrow: milestone_id (FK → Milestone), amount, status (enum: FUNDED, RELEASED, REFUNDED), timestamps
+   - Review: contract_id (FK → Contract), reviewer_id (FK → User), rating, comment, timestamps
+   - Message: sender_id (FK → User), receiver_id (FK → User), content, read_status, timestamps
+   - Notification: user_id (FK → User), type, message, read_status, timestamps
+   - Dispute: contract_id (FK → Contract), raised_by_user_id (FK → User), reason, status (enum: OPEN, RESOLVED, REJECTED), timestamps
+
+4. Run migration scripts:
+   - `npx prisma migrate dev --name init`
+   - Ensure clean migration output in the console.
+
+5. Create a /backend/prisma/seed.ts script:
+   - Seed dummy Users (e.g., Admin, Client, Freelancer)
+   - Seed 3-5 dummy Jobs with different budgets and statuses
+
+6. After seeding, verify:
+   - Database tables created correctly
+   - Relations and foreign keys enforced
+   - Dummy data appears with `npx prisma studio`

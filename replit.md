@@ -1,10 +1,21 @@
 # Overview
 
-This is a full-stack web application built with a modern tech stack featuring Express.js backend, React frontend, and PostgreSQL database. The project is structured as a monorepo with shared TypeScript types and utilities. It uses Vite for frontend build tooling, Drizzle ORM for database management, and shadcn/ui for UI components.
+ShareWork is a comprehensive freelance marketplace platform built with a modern full-stack tech stack. The application features Express.js backend with Prisma ORM, React frontend with Vite, and PostgreSQL database. The project is structured as a monorepo with shared TypeScript types, comprehensive database schema for freelance marketplace operations, and modern UI components.
 
 # User Preferences
 
 Preferred communication style: Simple, everyday language.
+
+# Recent Changes
+- **2025-08-25**: Transformed project to ShareWork freelance marketplace platform
+- **2025-08-25**: Implemented comprehensive Prisma schema with 11 database models
+- **2025-08-25**: Added role-based authentication system (Admin, Client, Freelancer)
+- **2025-08-25**: Created job posting and proposal bidding system
+- **2025-08-25**: Implemented escrow and milestone payment system
+- **2025-08-25**: Added review and dispute resolution features
+- **2025-08-25**: Created seed file with realistic test data (5 users, 5 jobs, 3 proposals)
+- **2025-08-25**: Updated UI branding and components for ShareWork platform
+- **2025-08-25**: Configured PostgreSQL database with successful migrations
 
 # System Architecture
 
@@ -26,10 +37,13 @@ Preferred communication style: Simple, everyday language.
 - **Development Integration**: Vite middleware integration for seamless full-stack development
 
 ## Database Design
-- **Drizzle ORM**: Type-safe database operations with PostgreSQL dialect
-- **Schema Definition**: Centralized schema in shared directory with Zod validation
-- **Database Migrations**: Automated migration system with drizzle-kit
-- **User Model**: Basic user entity with username/password authentication structure
+- **Prisma ORM**: Type-safe database operations with PostgreSQL
+- **Comprehensive Schema**: 11 models including Users, Jobs, Contracts, Escrow, Reviews, Disputes
+- **Database Relations**: Full freelance marketplace relationships with proper foreign keys
+- **Authentication**: Role-based user system (Admin, Client, Freelancer) with profiles
+- **Marketplace Features**: Job posting, proposals, contracts, milestones, escrow system
+- **Migration System**: Prisma migrate with automated schema management
+- **Seed Data**: Pre-populated database with test users, jobs, and proposals
 
 ## Shared Resources
 - **Type Definitions**: Shared TypeScript interfaces and types between frontend and backend
@@ -45,9 +59,10 @@ Preferred communication style: Simple, everyday language.
 # External Dependencies
 
 ## Database
-- **Neon Database**: Serverless PostgreSQL database for production deployment
-- **Drizzle ORM**: Type-safe database toolkit with migration support
+- **Neon Database**: Serverless PostgreSQL database for production deployment  
+- **Prisma ORM**: Type-safe database toolkit with comprehensive migration support
 - **Connection Pooling**: Built-in connection management through Neon serverless adapter
+- **bcrypt**: Secure password hashing for user authentication
 
 ## UI Framework
 - **Radix UI**: Headless, accessible component primitives

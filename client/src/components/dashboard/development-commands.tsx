@@ -2,18 +2,20 @@ const commandSections = [
   {
     title: "Development",
     commands: [
-      { description: "# Install dependencies", command: "npm run install:all" },
-      { description: "# Start development servers", command: "npm run dev" }
+      { description: "# Install dependencies", command: "npm install" },
+      { description: "# Setup database", command: "npx prisma migrate dev --name init" },
+      { description: "# Start dev servers", command: "npm run dev" }
     ],
     testId: "commands-development"
   },
   {
-    title: "Production",
+    title: "Database",
     commands: [
-      { description: "# Build for production", command: "npm run build" },
-      { description: "# Start production server", command: "npm start" }
+      { description: "# Run migrations", command: "npx prisma migrate dev" },
+      { description: "# Seed database", command: "npx prisma db seed" },
+      { description: "# View database", command: "npx prisma studio" }
     ],
-    testId: "commands-production"
+    testId: "commands-database"
   }
 ];
 

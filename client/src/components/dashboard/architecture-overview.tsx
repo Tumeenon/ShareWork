@@ -4,13 +4,13 @@ const modules = [
   {
     icon: Server,
     title: "Backend API",
-    subtitle: "Express.js Server",
+    subtitle: "Express + Prisma",
     bgColor: "bg-primary/20",
     iconColor: "text-primary",
     features: [
-      { name: "Authentication", description: "JWT middleware & user auth" },
-      { name: "Database Models", description: "Users, Projects, Tasks" },
-      { name: "API Routes", description: "RESTful endpoints" }
+      { name: "Database Models", description: "Users, Jobs, Contracts, Escrow" },
+      { name: "Authentication", description: "JWT + role-based access" },
+      { name: "Payment System", description: "Escrow & milestones" }
     ],
     testId: "module-backend"
   },
@@ -21,24 +21,24 @@ const modules = [
     bgColor: "bg-accent/20",
     iconColor: "text-accent",
     features: [
-      { name: "Components", description: "Reusable UI components" },
-      { name: "Pages & Routing", description: "React Router setup" },
-      { name: "State Management", description: "Context API & hooks" }
+      { name: "User Dashboard", description: "Client & freelancer panels" },
+      { name: "Job Marketplace", description: "Browse & bid on jobs" },
+      { name: "Messaging System", description: "Real-time communication" }
     ],
     testId: "module-frontend"
   },
   {
     icon: Share,
-    title: "Shared Resources",
-    subtitle: "Cross-platform code",
+    title: "Core Features",
+    subtitle: "ShareWork Platform",
     bgColor: "bg-primary/20",
     iconColor: "text-primary",
     features: [
-      { name: "TypeScript Types", description: "Interface definitions" },
-      { name: "Constants", description: "Shared configurations" },
-      { name: "Utilities", description: "Helper functions" }
+      { name: "Job Management", description: "Post, bid, and manage jobs" },
+      { name: "Escrow System", description: "Secure payment processing" },
+      { name: "Review System", description: "Trust & reputation scores" }
     ],
-    testId: "module-shared"
+    testId: "module-features"
   }
 ];
 

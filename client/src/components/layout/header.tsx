@@ -11,10 +11,10 @@ export default function Header() {
           </div>
           <div>
             <h1 className="text-lg font-semibold text-text-primary" data-testid="header-title">
-              Full-Stack Project Setup
+              ShareWork
             </h1>
             <p className="text-sm text-subtle" data-testid="header-subtitle">
-              Node.js + Express + React + Vite
+              Freelance Marketplace Platform
             </p>
           </div>
         </div>
@@ -22,7 +22,7 @@ export default function Header() {
           <div className="bg-primary/10 border border-primary/20 rounded-full px-3 py-1 flex items-center space-x-2">
             <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
             <span className="text-sm text-accent font-medium" data-testid="status-indicator">
-              Development Ready
+              Database Setup
             </span>
           </div>
           <Button 

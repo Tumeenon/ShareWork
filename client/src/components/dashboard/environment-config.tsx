@@ -1,11 +1,11 @@
 import { Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const envConfig = `# Database
-DATABASE_URL=postgresql://user:password@localhost:5432/myapp
+const envConfig = `# Database Configuration
+DATABASE_URL="postgresql://username:password@localhost:5432/sharework_db?schema=public"
 
 # JWT Configuration
-JWT_SECRET=your-super-secret-jwt-key
+JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
 JWT_EXPIRES_IN=7d
 
 # API Configuration
@@ -15,7 +15,10 @@ API_BASE_URL=http://localhost:3001
 
 # Frontend Configuration
 VITE_API_URL=http://localhost:3001
-VITE_APP_TITLE=My Full Stack App`;
+VITE_APP_TITLE=ShareWork
+
+# Prisma Configuration
+PRISMA_GENERATE_DATAPROXY=false`;
 
 export default function EnvironmentConfig() {
   const handleCopyTemplate = () => {

@@ -14,16 +14,16 @@ export default function Sidebar() {
         <h3 className="text-sm font-semibold text-subtle mb-3">Project Stats</h3>
         <div className="space-y-2">
           <div className="flex justify-between items-center">
-            <span className="text-sm">Total Files</span>
-            <span className="text-sm font-mono text-accent" data-testid="stat-total-files">47</span>
+            <span className="text-sm">Database Models</span>
+            <span className="text-sm font-mono text-accent" data-testid="stat-total-files">11</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-sm">Dependencies</span>
-            <span className="text-sm font-mono text-accent" data-testid="stat-dependencies">23</span>
+            <span className="text-sm">API Endpoints</span>
+            <span className="text-sm font-mono text-accent" data-testid="stat-dependencies">25</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-sm">Dev Dependencies</span>
-            <span className="text-sm font-mono text-accent" data-testid="stat-dev-dependencies">15</span>
+            <span className="text-sm">Modules</span>
+            <span className="text-sm font-mono text-accent" data-testid="stat-dev-dependencies">6</span>
           </div>
         </div>
       </div>
