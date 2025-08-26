@@ -66,13 +66,15 @@ enum DisputeStatus {
 }
 
 model User {
-  id            String     @id @default(uuid())
-  email         String     @unique
-  password_hash String
-  role          UserRole   @default(CLIENT)
-  status        UserStatus @default(ACTIVE)
-  created_at    DateTime   @default(now())
-  updated_at    DateTime   @updatedAt
+  id                String     @id @default(uuid())
+  email             String     @unique
+  password_hash     String?
+  role              UserRole   @default(CLIENT)
+  status            UserStatus @default(ACTIVE)
+  google_id         String?    @unique
+  two_factor_secret String?
+  created_at        DateTime   @default(now())
+  updated_at        DateTime   @updatedAt
 
   // Relations
   profile         Profile?
